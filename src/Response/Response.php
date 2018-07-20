@@ -10,7 +10,8 @@ class Response {
 	public $card = null;
 	public $reprompt = null;
 	public $shouldEndSession = false;
-
+	public $directives = null;
+	
 	public function __construct() {
 		$this->outputSpeech = new OutputSpeech;
 	}
@@ -111,7 +112,8 @@ class Response {
 				'outputSpeech' => $this->outputSpeech ? $this->outputSpeech->render() : null,
 				'card' => $this->card ? $this->card->render() : null,
 				'reprompt' => $this->reprompt ? $this->reprompt->render() : null,
-				'shouldEndSession' => $this->shouldEndSession ? true : false
+				'shouldEndSession' => $this->shouldEndSession ? true : false,
+				'directives' => $this->directives
 			)
 		);
 	}
